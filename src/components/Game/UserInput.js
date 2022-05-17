@@ -1,19 +1,17 @@
 import React from 'react'
+import "./UserInput.css"
 
 function UserInput() {
   return (   
     <div className="wordle">
-
-    <label>
-        Din gissning:
-        <input className="userWord" type="text" />
+    <form className="user-form">
+    <label>        
+        <input className="user-input" type="text" placeholder='Gissa här!' />
     </label>
-    <button className="userInput">OK!</button>
+    <button className="user-btn" type="submit">OK!</button>
+    </form>
     <h1>&#128526;</h1>
-    <ul>
-        <span>
-        </span>
-    </ul>      
+      
 
 </div>
 

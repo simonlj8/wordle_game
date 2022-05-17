@@ -6,7 +6,7 @@ import './App.css';
 
 
 function App() {
-  const [GameState, setGameState] = useState("config");
+  const [GameState, setGameState] = useState("play");
 
   if (GameState === "config") {
     return (
@@ -20,7 +20,7 @@ function App() {
   else if (GameState === "play") {
     return (
       <div className="App">
-        <Navbar /> 
+        <Navbar />         
         <UserInput />           
       </div>
     );
