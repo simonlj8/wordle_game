@@ -7,19 +7,24 @@ import './App.css';
 
 function App() {
   const [GameState, setGameState] = useState("config");
-  const [WordLength, setWordLength] = useState(5);
-
+  const [WordLength, setWordLength] = useState(4);
+  const [isUnique, setIsUnique] = useState("false")
 
   const HandleSubmit = async () => {
     setGameState("play");
   }
+ 
 
   if (GameState === "config") {
     return (
       <div className="App">      
         <Navbar />
         <Config
-        HandleSubmit={HandleSubmit} />         
+        HandleSubmit={HandleSubmit}
+        WordLength={WordLength}
+        setWordLength={setWordLength}
+        isUnique={isUnique}
+        setIsUnique={setIsUnique} />         
       </div>
     );
   }
@@ -34,13 +39,5 @@ function App() {
   }
 }
 
-  /*
-  return (
-    <div className="App">           
-         <Navbar />
-         <Config />              
-    </div>
-  );
-}*/
 
 export default App;

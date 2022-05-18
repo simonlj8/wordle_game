@@ -15,8 +15,8 @@ return (
        <form onSubmit={SubmitSetting}>
        <label>Välj hur många bokstäver du vill spela med: </label>
        <select
-       value={WordLength}>
-       onChange={(e) => setWordLength(parseInt(e.target.value))}
+       value={WordLength}
+       onChange={(e) => setWordLength(parseInt(e.target.value))}>
            <option value="4">4</option>
            <option value="5">5</option>
            <option value="6">6</option>                
@@ -28,10 +28,11 @@ return (
        <div>
        
      <input
-       type="radio"
+       type="radio"       
        value={isUnique}
        onChange={() => setIsUnique(false)}
        checked={!isUnique}
+       
      />
      Tillåt samma bokstäver flera gånger.
      <br />
