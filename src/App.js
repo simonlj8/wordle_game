@@ -6,13 +6,20 @@ import './App.css';
 
 
 function App() {
-  const [GameState, setGameState] = useState("play");
+  const [GameState, setGameState] = useState("config");
+  const [WordLength, setWordLength] = useState(5);
+
+
+  const HandleSubmit = async () => {
+    setGameState("play");
+  }
 
   if (GameState === "config") {
     return (
       <div className="App">      
         <Navbar />
-        <Config />         
+        <Config
+        HandleSubmit={HandleSubmit} />         
       </div>
     );
   }
