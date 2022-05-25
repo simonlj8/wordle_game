@@ -17,10 +17,10 @@ class Navbar extends Component {
                 <a href="/" className='game'> Spela </a>
             </li>
             <li>
-                <a href="/api/highscore" className="highscore"> Poänglista </a>
+                <a href="http://localhost:5080/api/highscore" className="highscore"> Poänglista </a>
             </li>
             <li>
-                <a href="/api/info" className="info"> Information </a>
+                <a href="http://localhost:5080/api/info" className="info"> Information </a>
             </li>
         </ul>
     </nav>  

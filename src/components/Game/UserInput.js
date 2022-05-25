@@ -1,6 +1,8 @@
 import React from 'react'
 import "./UserInput.css"
 
+
+
 function UserInput() {
   return (   
     <div className="wordle">
@@ -10,6 +12,7 @@ function UserInput() {
     </label>
     <button className="user-btn" type="submit">OK!</button>
     </form>
+    
     <h1>&#128526;</h1>
       
 

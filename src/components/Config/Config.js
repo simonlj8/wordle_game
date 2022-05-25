@@ -1,18 +1,18 @@
 import { useState } from "react";
 
-function Config ({ WordLength, setWordLength, setIsUnique, isUnique, HandleSubmit }) 
+function Config ({ WordLength, setWordLength, setIsUnique, isUnique, HandleSubmitConfig }) 
 {
  
- function SubmitSetting(e) {
+ function HandleSubmit(e) {
    e.preventDefault();
-   HandleSubmit(isUnique, WordLength);
+   HandleSubmitConfig(isUnique, WordLength);
  }
 return (
    <>        
    <div>
    <p>Välj hur många bokstäver och om orden ska ha unika eller tillåta samma bokstav flera gånger</p>    
    </div>
-       <form onSubmit={SubmitSetting}>
+       <form onSubmit={HandleSubmit}>
        <label>Välj hur många bokstäver du vill spela med: </label>
        <select
        value={WordLength}

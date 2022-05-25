@@ -1,30 +1,40 @@
-import Navbar from './components/Navbar/Navbar.js';
-import Config from './components/Config/Config.js';
-import UserInput from './components/Game/UserInput.js';
+import Navbar from './components/Navbar/Navbar';
+import Config from './components/Config/Config';
+import UserInput from './components/Game/UserInput';
 import React, { useState, useEffect } from 'react';
+import Game from './components/Game/Game'
 import './App.css';
 
 
 function App() {
-  const [GameState, setGameState] = useState("config");
+  const [GameState, setGameState] = useState("play");
   const [WordLength, setWordLength] = useState(4);
-  const [isUnique, setIsUnique] = useState("false")
+  const [isUnique, setIsUnique] = useState(true);
+  const [Guess, setGuess] = useState([]);
+  const [correctWord, setCorrectWord] = useState('');
 
-  const HandleSubmit = async () => {
+  const HandleSubmitConfig = async () => {
     setGameState("play");
+
+   
   }
  
+  
+ 
+
+
 
   if (GameState === "config") {
     return (
       <div className="App">      
         <Navbar />
         <Config
-        HandleSubmit={HandleSubmit}
+        HandleSubmitConfig={HandleSubmitConfig}
         WordLength={WordLength}
         setWordLength={setWordLength}
         isUnique={isUnique}
-        setIsUnique={setIsUnique} />         
+        setIsUnique={setIsUnique} 
+        setGameState={setGameState} />         
       </div>
     );
   }
@@ -33,7 +43,8 @@ function App() {
     return (
       <div className="App">
         <Navbar />         
-        <UserInput />           
+        <UserInput /> 
+        <Game correctWord={correctWord}/>          
       </div>
     );
   }
