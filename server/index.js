@@ -6,7 +6,7 @@ import HighScore from './utils/models.js';
 
 
 const app = express()
-const port = 5080
+const port = 5080;
 
 
 app.use(express.json());

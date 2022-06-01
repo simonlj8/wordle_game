@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-mongoose.connect('mongodb+srv://bosse:hmMU7sWgyuXhYzYZ@cluster0.pbxry.mongodb.net/wordleDB?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://bosse:hmMU7sWgyuXhYzYZ@cluster0.pbxry.mongodb.net/wordleDB?retryWrites=true&w=majority');
 
 const HighScore = mongoose.model('highscores', {
   name: String,

@@ -6,7 +6,7 @@ import Config from "../Config/Config";
 function Game({ correctWord, isUnique }) {
     //const [startTime] = useState(new Date());
     const [gameState, setGameState] = useState("play");
-    //const [endTime, setEndtime] = useState(null);
+    //const [endTime, setEndtime] = useState(null)
     const [inputText, setInputText] = useState("");
     const [guesses, setGuesses] = useState([]);
     const [name, setName] = useState("");
