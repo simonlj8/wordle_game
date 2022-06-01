@@ -12,5 +12,6 @@ const HighScore = mongoose.model('highscores', {
   correctWord: String,
 });
 
+console.log(HighScore)
 export default HighScore ;
 
