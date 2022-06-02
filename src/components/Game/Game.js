@@ -43,8 +43,8 @@ function Game({ correctWord, isUnique, WordLength }) {
             correctWord: correctWord,
             guesses: guesses.length,
             isUnique: isUnique,
-            name,
-            duration,
+            name: name,
+            duration: duration,
 
         };
 
@@ -61,38 +61,7 @@ function Game({ correctWord, isUnique, WordLength }) {
     };
 
 
-    //
-    let correctLetters = correctWord.split("").map((letter, index) => ({
-        ...index,
-        letter: letter,
-        star: "*",
-        color: "boxcolor",
-      }));
 
-
-    const wordLengthBoxes = correctLetters.map((box, xl) => {
-        return (
-          <span key={xl} className={box.color}>
-            {box.star}
-          </span>
-        )
-      })
-    
-      const showGuessResult =
-        guessResult.slice(0).reverse().map((nestled, i) => {
-          return (
-            <li key={i}>
-              {nestled.guessResult.map((letter, j) => {
-                return (
-                  <span key={j} className={letter.status}>
-                    {letter.letter}
-                  </span>
-                )
-              })}
-            </li>
-          )
-        });
-    //
     if (gameState === "won") {
         duration = Math.round((endTime - startTime) / 1000)
         return (
@@ -132,8 +101,7 @@ function Game({ correctWord, isUnique, WordLength }) {
                 onKeyUp={(ev) => handleKeyUp(ev.code)}
             />
             <button className="user-btn" onClick={(ev) => handleKeyUp(ev.code)}>OK!</button>
-            <ul>
-                {wordLengthBoxes}
+            <ul>                
                 {guesses.map((guess, index) => (
                     <li key={index}>{guess}</li>
                 ))}
