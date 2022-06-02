@@ -38,8 +38,20 @@ app.get('/api/info', async (req, res) => {
   
 // GET Higscore from mongoDB
 app.get("/api/highscore", async (req, res) => {
-  const hScore = await HighScore.find();
-  res.json(hScore);
+  let hScore = await HighScore.find();
+  hScore = hScore.sort((a, b) => a.time - b.time);
+//
+const highscoreList = hScore.map((entry) => ({
+  name: entry.name,
+  guesses: entry.guesses,
+  correctWord: entry.correctWord,  
+  length: entry.length,
+  unique: entry.unique,
+  date: entry.date,
+  duration : entry.duration,
+}));
+res.json(highscoreList);
+//res.json(hScore);
 })
 
 // POST Highscore 
@@ -48,9 +60,14 @@ app.post("/api/highscore", async (req, res) => {
   //
   const highScoreInput = {
     name: req.body.name,
-    length: req.body.length,
-    unique: req.body.unique,
+   // length: req.body.length,
+    //unique: req.body.unique,
+    //time: req.body.time,
+    guesses: req.body.guesses,
+    duration: req.body.duration,
+    correctWord: req.body.correctWord,
   };
+  console.log(highScoreInput)
   //req.body
   const hScoreP = new HighScore(highScoreInput);
   await hScoreP.save();

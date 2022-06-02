@@ -10,6 +10,7 @@ const HighScore = mongoose.model('highscores', {
   unique: Boolean,
   date: String,
   correctWord: String,
+  duration: Number,
 });
 
 console.log(HighScore)

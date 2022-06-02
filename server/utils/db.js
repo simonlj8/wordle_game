@@ -1,5 +1,4 @@
 const HIGHSCORES = [];
-const test = []
 export async function saveHighscore(highscore) {
   HIGHSCORES.push(highscore);
   return highscore;

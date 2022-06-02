@@ -6,6 +6,7 @@ import './App.css';
 
 
 
+
 function App() {
   const [GameState, setGameState] = useState("config");
   const [WordLength, setWordLength] = useState(4);
@@ -21,10 +22,12 @@ function App() {
 
 
   useEffect(() => {
-    const loadWord = async () => {
-      const res = await fetch("http://localhost:5080/api/random_word/5/false");
+    const loadWord = async (unique, length) => {
+      const res = await fetch("http://localhost:5080/api/random_word/3/false");
+     
       const data = await res.json();
       setCorrectWord(data.word);
+      return;
 
     };
 
@@ -38,7 +41,7 @@ function App() {
     setGameState("play");
 
   }
-
+  
 
   if (GameState === "config") {
     return (

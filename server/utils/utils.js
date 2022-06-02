@@ -12,15 +12,15 @@ export async function getRandomWord(WordLength, unique) {
     }
   );
   const randomIndex = Math.floor(Math.random() * words.length);
-  const uniqueChars = words.filter(
+  const uniqueC = words.filter(
     (e) => [...new Set(e.split(''))].join('') == e
   );
-  console.log(words[randomIndex].toUpperCase())
+  
   if (unique) {
-    return await uniqueChars[
-      Math.floor(Math.random() * uniqueChars.length)
+    return await uniqueC[
+      Math.floor(Math.random() * uniqueC.length)
     ].toUpperCase();
   }
-  return await words[randomIndex].toUpperCase();
+  return await words[randomIndex];
 
 }
