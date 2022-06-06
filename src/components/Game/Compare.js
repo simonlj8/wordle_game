@@ -1,4 +1,4 @@
-const compare = (guess, word) => {
+const Compare = (guess, word) => {
     
     let g = guess.toUpperCase().split('');
     let w = word.toUpperCase().split('');
@@ -31,7 +31,8 @@ const compare = (guess, word) => {
             if (!tmpWord.includes(g[i])) {
                 output[i] = {
                     letter: g[i],
-                    result: "Incorrect"
+                    result: "Incorrect",
+                    color: "white"
                 }
             }
         }
@@ -41,4 +42,4 @@ const compare = (guess, word) => {
     return output;
 }
 
-export default compare;
+export default Compare;

@@ -1,0 +1,22 @@
+<div class='list'>
+  <ul>{{#each highscoreList}}
+      <li class='li'>
+        <div>
+          Spelare: {{this.name}}
+        </div>
+        <div>
+          Tid (Sekunder): {{this.time}}
+        </div>
+        <div>
+          Antal gissningar: {{this.guesses}}
+        </div>
+        <div>
+          Längd på ordet: {{this.length}}
+        </div>
+        <div>
+          Unika bosktäver?: {{this.isUnique}}
+        </div>                
+      </li>
+    {{/each}}
+  </ul>
+</div>

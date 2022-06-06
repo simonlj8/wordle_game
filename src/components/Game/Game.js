@@ -14,7 +14,7 @@ function Game({ correctWord, isUnique, WordLength }) {
     const [guessResult, SetGuessResult] = useState([]); 
 
 
-    let duration = ""
+    let time = ""
 
     //
 
@@ -44,7 +44,8 @@ function Game({ correctWord, isUnique, WordLength }) {
             guesses: guesses.length,
             isUnique: isUnique,
             name: name,
-            duration: duration,
+            time: time,            
+            length: correctWord.length,
 
         };
 
@@ -63,18 +64,18 @@ function Game({ correctWord, isUnique, WordLength }) {
 
 
     if (gameState === "won") {
-        duration = Math.round((endTime - startTime) / 1000)
+        time = Math.round((endTime - startTime) / 1000)
         return (
             <div className="Game">
                 <h1>Du vann!</h1>
                 <p>Det rätta ordet var: {guesses.at(-1)}</p>
-                <p>Tid: {duration}</p>
+                <p>Tid: {time}</p>
                 <p>Antal gissningar: {guesses.length}</p>
                 <h2>Lägg till i poänglista</h2>
                 <form onSubmit={handleSubmit}>
                     <input className="user-input"
                         value={name}
-                        onChange={(ev) => setName(ev.target.value)}
+                        onChange={(ev) => setName(ev.target.value.toUpperCase())}
                         placeholder="Ditt namn"
                     />
                     <button className="user-btn" type="submit">OK!</button>
@@ -92,7 +93,7 @@ function Game({ correctWord, isUnique, WordLength }) {
     return (
         <div className="Game">
             <div className="counter">            
-            <CountUp end={1000} duration="1400" />
+            <CountUp end={1500} duration="1400" />
             </div>
             <input className="user-input"
                 placeholder="Gissa här!"
