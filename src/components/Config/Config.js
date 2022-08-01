@@ -11,41 +11,37 @@ function Config({ WordLength, setWordLength, setIsUnique, isUnique, HandleSubmit
                 <p>Välj hur många bokstäver och om orden ska ha unika eller tillåta samma bokstav flera gånger</p>
             </div>
             <form onSubmit={HandleSubmit}>
+            
                 <label>Välj hur många bokstäver du vill spela med: </label>
                 <select
                     value={WordLength}
                     onChange={(e) => setWordLength(parseInt(e.target.value))}>
                     <option value="4">4</option>
                     <option value="5">5</option>
-                    <option value="6">6</option>
+                    <option value="6">6</option>                  
                 </select>
-
+                
                 <br />
                 <br />
-
                 <div>
-
                     <input
                         type="radio"
                         value={isUnique}
-                        onChange={(e) => setIsUnique(false)}
+                        onChange={() => setIsUnique(false)}
                         checked={!isUnique}
-
                     />
                     Tillåt samma bokstäver flera gånger.
                     <br />
                     <input
                         type="radio"
                         value={isUnique}
-                        onChange={(e) => setIsUnique(true)}
+                        onChange={() => setIsUnique(true)}
                         checked={isUnique}
                     />
                     Endast unika bokstäver.
                 </div>
                 <button type="submit">Starta spel!</button>
-
             </form>
-
         </>
     );
 }

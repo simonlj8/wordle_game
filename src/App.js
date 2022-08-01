@@ -3,10 +3,6 @@ import Config from './components/Config/Config';
 import React, { useState, useEffect } from 'react';
 import Game from './components/Game/Game'
 import './App.css';
-import Compare from './components/Game/Compare';
-
-
-
 
 function App() {
   const [GameState, setGameState] = useState("config");
@@ -14,52 +10,17 @@ function App() {
   const [isUnique, setIsUnique] = useState(false);
   const [guess, setGuess] = useState([]);
   const [correctWord, setCorrectWord] = useState('');
-  //const [length, setLength] = useState(5);
- //const [unique, setUnique] = useState(true)
-  //
-
-
-
-  /*useEffect(() => {
-     /* const loadWord = async (unique, length) => {
-        //        
-       //const res = await fetch(`http://localhost:5080/api/word?length=${length}&unique=${unique}`)
-        const res = await fetch("http://localhost:5080/api/word/4/false");
-        //const res = await fetch(`http://localhost:5080/api/word/${length}/${unique}`);
-        
-        //
-      //const res = await fetch("http://localhost:5080/api/random_word/3/false");
-     
-      const data = await res.json();
-      setCorrectWord(data.word);
-      //console.log(data, "hej")
-      return;
-
-    };
-
-   loadWord();
-  }, []);*/
-
-  //
 
 
   const HandleSubmitConfig = async (unique, length) => {
-
-    //        
-   // const res = await fetch(`http://localhost:5080/api/word?length=${length}&unique=${unique}`)
-    //const res = await fetch("http://localhost:5080/api/word/4/false");
-  const res = await fetch(`http://localhost:5080/api/word/${length}/${unique}`);   
-
+    const res = await fetch(`http://localhost:5080/api/word/${length}/${unique}`);
     const data = await res.json();
     setCorrectWord(data.word);
-    console.log(data.word, "hej")  
-    
-
+    console.log(data.word)
+    setGuess([])
     setGameState("play");
     return;
-
   }
-
 
   if (GameState === "config") {
     return (
@@ -69,10 +30,9 @@ function App() {
           HandleSubmitConfig={HandleSubmitConfig}
           WordLength={WordLength}
           setWordLength={setWordLength}
-          //isUnique={isUnique}
+          isUnique={isUnique}
           setIsUnique={setIsUnique}
           setGameState={setGameState} />
-
       </div>
     );
   }
@@ -83,7 +43,6 @@ function App() {
         <Navbar />
         <Game correctWord={correctWord}
           isUnique={isUnique}
-          //unique={unique}
           setIsUnique={setIsUnique}
           WordLength={WordLength}
           setWordLength={setWordLength}
@@ -96,7 +55,6 @@ function App() {
     return (
       <div className='App'>
         <Navbar />
-
       </div>
     )
   }

@@ -1,12 +1,37 @@
-.body {
+.body, html {
     text-align: center;
-    background-color: blue;
+    background-color: cornflowerblue;
 }
 
 .App {
     text-align: center;
+    background-color: cornflowerblue;
+   
 }
 
+.ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+
+.list {
+    display: flex;
+    justify-content: center;
+  }
 .container {
     text-align: center;
+      
+}
+
+.ul, li {
+    list-style-type: none;
+    padding: 1rem 2rem;
+  }
+
+  a:hover {
+    color: #2600ff;
 }

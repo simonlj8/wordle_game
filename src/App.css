@@ -1,6 +1,6 @@
 .body, html {
   text-align: center;
-  background-color: cornflowerblue;
+  background-color: cornflowerblue; 
 }
 
 .Navbar {
@@ -12,8 +12,7 @@
 }
 
 .App {
-  text-align: center;
-  
+  text-align: center;   
 }
 
 .header {
@@ -24,3 +23,71 @@
   display: grid;
   place-items: center;
 }
+
+.boxes ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.wordle {
+  margin: auto;
+  text-align: center;
+  min-width: 20rem;
+  height: 100vh;
+ 
+}
+
+.correct,
+.incorrect,
+.missplaced,
+.boxcolor {
+    border-radius: 3px;
+    display: inline-block;
+    height: 30px;
+    font-family: monospace;
+    font-size: xx-large;
+    margin: 4px;
+    padding-top: 5px;
+    width: 40px;
+  
+}
+
+.correct {
+    background-color: rgb(27, 206, 27);
+}
+
+.incorrect {
+    background-color: rgb(99, 38, 38);
+}
+
+.missplaced {
+    background-color: rgb(224, 224, 138);
+}
+
+.boxcolor {
+  background-color: rgb(184, 184, 184);
+  color: grey;
+}
+
+.correctGuess {
+    text-align: center;
+}
+
+.checkbox {
+    width: 1rem;
+}
+
+
+.select {
+  color: black;
+  margin: auto;
+  margin-top: 0.5rem;
+  width: 14rem;
+}
+
+.countUp {
+  margin: 0.2rem;
+}
+

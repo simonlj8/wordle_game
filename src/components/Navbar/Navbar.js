@@ -1,9 +1,5 @@
 import './Navbar.css';
 
-
-//class Navbar extends Component {
-
-//   render() {
 function Navbar() {
     return (
         <>
