@@ -5,7 +5,6 @@ import { getRandomWord } from "./utils/utils.js";
 import HighScore from './utils/models.js';
 import { engine } from 'express-handlebars'
 
-
 const app = express()
 
 app.use(express.json());

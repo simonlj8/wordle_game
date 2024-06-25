@@ -1,6 +1,7 @@
 .body, html {
   text-align: center;
-  background-color: cornflowerblue; 
+  /* background-color: cornflowerblue;  */
+  background-color: #c8d5ea
 }
 
 .Navbar {

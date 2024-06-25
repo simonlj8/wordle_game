@@ -1,6 +1,7 @@
 .body {
     text-align: center;
-    background-color: blue;
+    /* background-color: blue; */
+    background-color: #c8d5ea
 }
 
 .App {
