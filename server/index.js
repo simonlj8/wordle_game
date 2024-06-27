@@ -20,7 +20,7 @@ app.get("/api/word/:id?/:unique?", async (req, res) => {
   res.status(200).json({ word });
 });
 
-app.get('/', (req, res) => {
+app.get('http://localhost:3000', (req, res) => {
    
   res.send("Hello World")
 })

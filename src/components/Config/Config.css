@@ -1,0 +1,33 @@
+.styled-select {
+    appearance: none; 
+    width: 50px; 
+    background-color: #a8710a; 
+    color: rgb(238, 225, 166); 
+    padding: 6px 10px; 
+    border: none; 
+    border-radius: 4px; 
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .styled-select:hover {
+    background-color: #d6a621; 
+  }
+
+  .styled-select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    border-color: rgba(81, 203, 238, 1);
+  }
+  
+  .styled-select::after {
+    content: '▼';
+    font-size: 12px;
+    position: absolute;
+    right: 10px;
+    top: calc(50% - 6px);
+    pointer-events: none;
+  }
+  
+ 
