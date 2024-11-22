@@ -1,15 +1,57 @@
 <html>
   <head>
     <meta charset='utf-8' />
-    <title>Example App</title>
-    <link rel='stylesheet' href="/info.css" />
+    <title>Simons Wordler</title>
+    <link rel='stylesheet' href="../layouts/info.css" />
+    <style>
+      body, html {
+  background-color: #3eb1e6;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.list ul {
+  list-style-type: none;
+  padding: 0;
+  width: 80%;
+  max-width: 600px;
+}
+
+.list li {
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.list li div {
+  text-align: left;
+  color: #333;
+}
+
+.list li div:nth-child(odd) {
+  font-weight: bold;
+}
+
+
+    </style>
 
   </head>
   <body>
     <div class='App'>
       <h1>Simon's  🆆 🅾 🆁 🅳 🅻 🅴 🆁</h1>
       <nav class='container'>
-        <a href='/localhost:3000'>Spel</a>
+        <a href='http://localhost:3000'>Spel</a>
         <a href='/api/highscore'>Poänglista</a>
         <a href='/api/info'>Information</a>
       </nav>

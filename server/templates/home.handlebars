@@ -1,12 +1,14 @@
-<div class='list'>
+{{!-- <div class='list'>
   <ul>{{#each highscoreList}}
       <li class='li'>
         <div>
           Spelare: {{this.name}}
         </div>
+        <div></div>
         <div>
           Tid (Sekunder): {{this.time}}
         </div>
+        <div></div>
         <div>
           Antal gissningar: {{this.guesses}}
         </div>
@@ -16,6 +18,25 @@
         <div>
           Unika bosktäver?: {{this.isUnique}}
         </div>                
+      </li>
+    {{/each}}
+  </ul>
+</div> --}}
+
+<div class='list'>
+  <ul>
+    {{#each highscoreList}}
+      <li class='li'>
+        <div>Spelare:</div>
+        <div>{{this.name}}</div>
+        <div>Tid (Sekunder):</div>
+        <div>{{this.time}}</div>
+        <div>Antal gissningar:</div>
+        <div>{{this.guesses}}</div>
+        <div>Längd på ordet:</div>
+        <div>{{this.length}}</div>
+        <div>Unika bokstäver?:</div>
+        <div>{{this.isUnique}}</div>
       </li>
     {{/each}}
   </ul>

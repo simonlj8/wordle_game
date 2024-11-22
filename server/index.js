@@ -7,6 +7,8 @@ import { engine } from 'express-handlebars'
 
 const app = express()
 
+app.use(express.static("./public"));
+
 app.use(express.json());
 app.use(cors());
 app.engine("handlebars", engine());
@@ -25,12 +27,14 @@ app.get('http://localhost:3000', (req, res) => {
   res.send("Hello World")
 })
 
+// app.get('/api/info', async (req, res) => {
+//     const fileBuf = await fs.readFile('./static/info.html');
+//     res.type('html');
+//     res.send(fileBuf);
+//   });
 app.get('/api/info', async (req, res) => {
-    const fileBuf = await fs.readFile('./static/info.html');
-    res.type('html');
-    res.send(fileBuf);
-  });
-
+  res.render("info")
+});
   
 // GET Higscore from mongoDB
 app.get("/api/highscore", async (req, res) => {
@@ -72,4 +76,3 @@ app.listen(5080);
 
 console.log("listening on port: 5080")
 
-app.use(express.static("./public"));
