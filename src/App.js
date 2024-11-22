@@ -19,7 +19,7 @@ function App() {
     console.log(data.word)
     setGuess([])
     setGameState("play");
-    return;
+    //return;
   }
 
   if (GameState === "config") {
