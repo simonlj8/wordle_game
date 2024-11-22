@@ -9,7 +9,7 @@ function Navbar() {
                 <nav className="Navbar">
                     <ul>
                         <li>
-                            <a href="/" className='game'> Spela </a>
+                            <a href="http://localhost:3000" className='game'> Spela </a>
                         </li>
                         <li>
                             <a href="http://localhost:5080/api/highscore" className="highscore"> Poänglista </a>

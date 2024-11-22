@@ -1,6 +1,12 @@
 import mongoose from 'mongoose';
+// import * as dotenv from 'dotenv';
 
-mongoose.connect('mongodb+srv://bosse:hmMU7sWgyuXhYzYZ@cluster0.pbxry.mongodb.net/wordleDB?retryWrites=true&w=majority');
+// dotenv.config();
+
+
+mongoose.connect('mongodb+srv://bosse:IO6HHq3T80lPerS9@cluster0.pbxry.mongodb.net/wordleDB?retryWrites=true&w=majority&appName=Cluster0',
+  () => console.log('Connected to DB')
+);
 
 const HighScore = mongoose.model('highscores', {
   name: String,
@@ -9,7 +15,6 @@ const HighScore = mongoose.model('highscores', {
   length: Number,
   isUnique: Boolean,
   unique: Boolean,
-  //date: String,
   correctWord: String,
   duration: Number,
 });
