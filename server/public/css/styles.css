@@ -84,7 +84,21 @@
   .list li div:nth-child(odd) {
     font-weight: bold;
   } */
-
+  body, html {
+    background-color: #3eb1e6;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .App {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Info sida styling */
   .main {
     display: flex;
     flex-direction: column;
@@ -131,4 +145,52 @@
   
   .github-link:hover {
     background-color: #2a8ec2;
+  }
+  
+  /* Poäng sida styling */
+  .list {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .list ul {
+    list-style-type: none;
+    padding: 0;
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  .list li {
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  
+  .list li div {
+    text-align: left;
+    color: #333;
+  }
+  
+  .list li div:nth-child(odd) {
+    font-weight: bold;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  a {
+    color: #3eb1e6;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    text-decoration: underline;
   }
